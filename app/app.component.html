@@ -1,20 +1,21 @@
 ﻿<header>
-    <h4> BookStore </h4>
-    <hr />
+    <h4 class="bottom-border"> BookStore </h4>
 </header>
 
-<!-- vertical tabs-->
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2">
-            <ul class="nav nav-sidebar">
-                <li><a routerLink="/dashboard"> Dashboard </a></li>
-                <li><a routerLink="/contact">Contact Us</a></li>
-                <li><a routerLink="/about">About Us</a></li>
-            </ul>
-        </div>
-        <div class="col-md-10">
-            <router-outlet></router-outlet>
-        </div>
-    </div>
+<div class="leftpane">
+    <ul class="nav">
+        <li><a routerLink="/dashboard"> Dashboard </a></li>
+        <li><a routerLink="/contact">Contact Us</a></li>
+        <li><a routerLink="/about">About Us</a></li>
+    </ul>
 </div>
+
+<div class="rightpane">
+    <router-outlet></router-outlet>
+</div>
+
+
+<!--<frameset cols="25%, 75%">
+    <frame src="./app/sideNav.html"> </frame>
+    <router-outlet></router-outlet>
+</frameset>-->

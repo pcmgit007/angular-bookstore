@@ -1,7 +1,10 @@
 ﻿import { Component } from '@angular/core';
 
 @Component({
-    template: `<h4>Contact details</h4>`
+    templateUrl: 'app/ContactComponent/contact.component.html',
+    styleUrls: ['app/ContactComponent/contact.component.css']
 })
 
-export class ContactComponent {}
+export class ContactComponent {
+    title: string = "Contact Us";
+}

@@ -1,0 +1,21 @@
+﻿.leftpane {
+    float: left;
+    /* background-color: #f1f1f1; */
+    width: 15%;
+    /* padding: 10px; */
+    height: 100%;
+    /* overflow: hidden; */
+    border-right: 1px solid black;
+}
+
+.bottom-border{
+    border-bottom: 1px solid black;
+    margin-bottom:0;
+}
+
+.rightpane {
+    background-color: #f3f3f3;
+    width: 85%;
+    float: right;
+    height: 100%;
+}
