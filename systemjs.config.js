@@ -16,6 +16,10 @@
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
             'rxjs': 'npm:rxjs',
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
+
+            'mydaterangepicker': 'npm:mydaterangepicker/bundles/mydaterangepicker.umd.js',
+            'ng2-translate':'npm:ng2-translate/bundles/ng2-translate.umd.js'
+
         },
 
         //packages tells system loader what to load when no extension
@@ -30,6 +34,9 @@
             'angular-in-memory-web-api': {
                 main: './index.js',
                 defaultExtension: 'js'
+            },
+            'ng2-translate': {
+                defaultExtension:'js'
             }
         }
     });

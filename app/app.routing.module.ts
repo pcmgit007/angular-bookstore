@@ -9,10 +9,11 @@ import { ContactComponent } from './ContactComponent/contact.component';
 import { PageNotFoundComponent } from './PageNotFoundComponent/pageNotFound.component';
 
 const routes: Routes = [
-    { path: 'dashboard', component: DashboardComponent },
+    { path: 'dashboard/:id', component: DashboardComponent },
     { path: 'contact', component: ContactComponent },
     { path: 'about', component: AboutComponent },
-    { path: '', component: HomeComponent },
+    { path: 'home', component: HomeComponent },
+    { path: '', redirectTo: '/home', pathMatch:'full' },
     { path: '*', component: PageNotFoundComponent }
 
 ];

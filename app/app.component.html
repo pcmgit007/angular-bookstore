@@ -1,16 +1,46 @@
 ﻿<header>
-    <h4 class="bottom-border"> BookStore </h4>
+    <span id="title"><strong>{{'bookstoreTxt' | translate}}</strong></span> <i class="glyphicon glyphicon-menu-hamburger" (click)="toggleMenu()"></i>
+
+    
+        <ol class="breadcrumb" stye="margin-top:0!important">
+            <li class="breadcrumb-item"><a href="/">{{'HomeTxt' | translate}}</a></li>
+            <li class="breadcrumb-item active" *ngIf="dashboard"><a href="#">{{'dashboardTxt' | translate}}</a></li>
+            <li class="breadcrumb-item active" *ngIf="contact" ><a href="#">{{'contactTxt' | translate}}</a></li>
+            <li class="breadcrumb-item active" *ngIf="about"><a href="#">{{'aboutTxt' | translate}}</a></li>
+            
+        </ol>
+
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            {{'sel-lang' | translate}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a (click)="changeLanguage('en')">{{'Languages.english' | translate}}</a></li>
+            <li><a (click)="changeLanguage('fr')">{{'Languages.french' | translate}}</a></li>
+            
+        </ul>
+    </div>
+    
+   <hr/>
+
 </header>
 
-<div class="leftpane">
+<div class="leftpane" [@slideInOut]="menuState">
     <ul class="nav">
-        <li><a routerLink="/dashboard"> Dashboard </a></li>
-        <li><a routerLink="/contact">Contact Us</a></li>
-        <li><a routerLink="/about">About Us</a></li>
+        <li><a [routerLink]="['/dashboard', 123]" (click)="toggleMenu(); dashboard=true; contact=false; about=false"> {{'dashboardTxt' | translate}} </a></li>
+        <!-- if passing parameters use [] with routerLink else u ll get an error::
+            EXCEPTION: Uncaught (in promise): Error: Cannot match any routes. URL Segment:
+        -->
+        <li><a routerLink="/contact" (click)="toggleContactMenu(); contact=true; dashboard=false; about=false">{{'contactTitle' | translate}}</a></li>
+        <li><a routerLink="/about" (click)="toggleMenu(); contact=false; dashboard=false; about=true">{{'aboutTxt2' | translate}}</a></li>
+
     </ul>
 </div>
 
-<div class="rightpane">
+
+<div [ngClass]="addClasses()">
+    
     <router-outlet></router-outlet>
 </div>
 
@@ -19,3 +49,7 @@
     <frame src="./app/sideNav.html"> </frame>
     <router-outlet></router-outlet>
 </frameset>-->
+
+<!-- one extra tab..> no left panel -->
+
+<!-- breadcrumb, parameters to router, headers, editable/searchable select box, date input, date-range input -one click 2 calendars first week of january eg, language support-internationalization, if working on test env, put it in test folder instead of dist folder-->
