@@ -12,7 +12,6 @@ import 'rxjs/add/operator/map';
     getCountriesList(): Observable<any> {
         return this._http.get('/app/Shared/country.json')
                 .map((response: Response) => {
-                    response.json();
                     return response.json();
                 });
         }

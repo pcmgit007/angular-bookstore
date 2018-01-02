@@ -10,7 +10,7 @@
             
         </ol>
 
-    <div class="dropdown">
+   <!-- <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
             {{'sel-lang' | translate}}
             <span class="caret"></span>
@@ -20,7 +20,12 @@
             <li><a (click)="changeLanguage('fr')">{{'Languages.french' | translate}}</a></li>
             
         </ul>
-    </div>
+    </div> -->
+	
+	<div>
+		<span (click)="changeLanguage('en')"> <a>{{'Languages.english' | translate}} </a></span>
+		<span (click)="changeLanguage('fr')"> <a>{{'Languages.french' | translate}} </a> </span>
+	</div>
     
    <hr/>
 
